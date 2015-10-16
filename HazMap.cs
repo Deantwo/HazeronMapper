@@ -346,50 +346,6 @@ namespace HazeronMapper
             }
         }
 
-        private void autoScanHMailsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Shores of Hazeron", "Mail")))
-            {
-                toolStripStatusLabel1.Text = "\"" + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Shores of Hazeron", "Mail") + "\" does not exist.";
-                if (DialogResult.Yes == MessageBox.Show("Could not find Hazeron Mail folder:" + Environment.NewLine + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Shores of Hazeron", "Mail") + Environment.NewLine + Environment.NewLine + "Copy directory path to clipboard?", "Mail Folder Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2))
-                    Clipboard.SetText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Shores of Hazeron", "Mail"));
-                return;
-            }
-            string[] fileList = Directory.GetFiles(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Shores of Hazeron", "Mail")); // %USERPROFILE%\Shores of Hazeron\Mail
-            if (fileList.Length > 0)
-            {
-                toolStripProgressBar1.Value = 0;
-                toolStripProgressBar1.Maximum = fileList.Length;
-                toolStripProgressBar1.Visible = true;
-                List<HMailObj> hMailList = new List<HMailObj>();
-                foreach (string file in fileList)
-                {
-                    HMailObj tempMail = new HMailObj(file);
-                    if (HMail.IsShipReport(tempMail) && tempMail.Body.Contains("System Survey of "))
-                    {
-                        hMailList.Add(tempMail);
-                    }
-                    toolStripProgressBar1.Increment(1);
-                }
-                toolStripProgressBar1.Visible = false;
-                toolStripProgressBar1.Value = 0;
-                toolStripProgressBar1.Maximum = hMailList.Count;
-                toolStripProgressBar1.Visible = true;
-                foreach (HMailObj hMail in hMailList)
-                {
-                    Readscan.readscan(HHelper.CleanText(hMail.Body), galaxy);
-                    toolStripProgressBar1.Increment(1);
-                }
-                if (hMailList.Count > 0)
-                    this.toolStripStatusLabel1.Text = hMailList.Count + " systems added.";
-                else
-                    this.toolStripStatusLabel1.Text = "No system scan mails were found.";
-                toolStripProgressBar1.Visible = false;
-            }
-            else
-                this.toolStripStatusLabel1.Text = "No Hazeron mails were found at the default location."; // If this becomes an issue, an user configurable path to the "%USERPROFILE%\Shores of Hazeron\Mail" may be needed.
-        }
-
         #endregion
         #region Moving the stars and so
 

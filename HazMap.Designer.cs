@@ -36,7 +36,6 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapdataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoScanHMailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -96,7 +95,6 @@
             // 
             this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mapdataToolStripMenuItem,
-            this.autoScanHMailsToolStripMenuItem,
             this.textFileToolStripMenuItem,
             this.clipboardToolStripMenuItem});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
@@ -106,20 +104,13 @@
             // mapdataToolStripMenuItem
             // 
             this.mapdataToolStripMenuItem.Name = "mapdataToolStripMenuItem";
-            this.mapdataToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.mapdataToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.mapdataToolStripMenuItem.Text = "Mapdata";
-            // 
-            // autoScanHMailsToolStripMenuItem
-            // 
-            this.autoScanHMailsToolStripMenuItem.Name = "autoScanHMailsToolStripMenuItem";
-            this.autoScanHMailsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.autoScanHMailsToolStripMenuItem.Text = "Auto Scan HMails";
-            this.autoScanHMailsToolStripMenuItem.Click += new System.EventHandler(this.autoScanHMailsToolStripMenuItem_Click);
             // 
             // textFileToolStripMenuItem
             // 
             this.textFileToolStripMenuItem.Name = "textFileToolStripMenuItem";
-            this.textFileToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.textFileToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.textFileToolStripMenuItem.Text = "Text File";
             this.textFileToolStripMenuItem.Click += new System.EventHandler(this.textFileToolStripMenuItem_Click);
             // 
@@ -128,7 +119,7 @@
             this.clipboardToolStripMenuItem.Name = "clipboardToolStripMenuItem";
             this.clipboardToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+V";
             this.clipboardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.clipboardToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.clipboardToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.clipboardToolStripMenuItem.Text = "Clipboard";
             this.clipboardToolStripMenuItem.Click += new System.EventHandler(this.clipboardToolStripMenuItem_Click);
             // 
@@ -228,7 +219,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripMenuItem autoScanHMailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
